@@ -114,6 +114,13 @@ while(queue.length > 0){
 
 * Top to bottom
 
+    101
+  
+  33    105
+
+* Inorder: 33, 101, 105
+* PreOrder: 101, 33, 105
+* PostOrder: 33, 105, 101
 
 ### Qus
 * If you know a solution is not far from the root of the tree: BFS
