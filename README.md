@@ -119,8 +119,63 @@ while(queue.length > 0){
   33    105
 
 * Inorder: 33, 101, 105
+
+```js
+// In order DFS, recursion
+function traverseInOrder(node, list) { //current node, list containg our traversed data)
+  if(node.left) {
+    traverseInOrder(node.left, list);
+  }
+  list.push(node.value);
+  if(node.right) {
+    traverseInOrder(node.right, list);
+  }
+  return list;
+}
+// final call
+var list = [];
+traverseInOrder(rootNode, list);
+```
+
 * PreOrder: 101, 33, 105
+
+```js
+// In order DFS, recursion
+function traversePreOrder(node, list) { //current node, list containg our traversed data)
+  list.push(node.value); // in pre order we first add value to list, unlike inorder where we go to left first.
+  if(node.left) {
+    traversePreOrder(node.left, list);
+  }
+  
+  if(node.right) {
+    traversePreOrder(node.right, list);
+  }
+  return list;
+}
+// final call
+var list = [];
+traversePreOrder(rootNode, list);
+```
+
 * PostOrder: 33, 105, 101
+
+```js
+// In order DFS, recursion
+function traversePostOrder(node, list) { //current node, list containg our traversed data)
+  
+  if(node.left) {
+    traversePostOrder(node.left, list);
+  }
+  if(node.right) {
+    traversePostOrder(node.right, list);
+  }
+  list.push(node.value); // in pre order we  add value to list in last, unlike inorder where we go to left first.
+  return list;
+}
+// final call
+var list = [];
+traversePostOrder(rootNode, list);
+```
 
 ### Qus
 * If you know a solution is not far from the root of the tree: BFS
