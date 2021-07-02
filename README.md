@@ -69,5 +69,61 @@ FIFO
 * peek O(1)
 
 NOTE: creating queues using Array is not recomnded because with enqueue, you have to shift all the items of array. means O(n)
+
 Queue should be implemented with Linked List.
+
+# Trees
+
+* 0 or more child nodes
+* root node
+* leaf nodes
+* sub tree(part of tree)
+* siblings
+
+Binary trees:
+* 0, 1 or 2 nodes
+* lookup O(log n)
+* insert O(log n)
+* delete O(log n)
+
+In unbalanced trees (where one side keeps growing like linked list) it becomes O(n) instead of O(log n)
+
+## Breadth First Search BFS O(n)
+
+* Starts with root, move left to right
+* BFS takes more memory, as it needs to store all the child nodes of the nodes that it visit.
+
+```js
+var currentNode = rootNode;
+var list = []; // traversal list, add items in this after visiting each node
+var queue = [];
+queue.push(currentNode);
+while(queue.length > 0){
+  currentNode = queue.shift(); // gets the items as per FIFO
+  list.push(currentNode.value);
+  if(currentNode.left){
+    queue.push(currentNode.left);
+  }
+  if(currentNode.right){
+    queue.push(currentNode.right);
+  }
+}
+```
+
+## Depth First Search DFS O(n)
+
+* Top to bottom
+
+
+### Qus
+* If you know a solution is not far from the root of the tree: BFS
+* If the tree is very deep and solutions are rare: BFS (DFS will take a lot of time as tree is deeper)
+* If the tree is very wide: DFS (BFS will need too much memory)
+* If solutions are frequent but located deep in the tree: DFS
+* Determining whether a path exists between two nodes: DFS
+* Finding the shortest path: BFS
+
+
+
+
 
