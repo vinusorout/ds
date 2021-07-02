@@ -37,4 +37,36 @@ Main CONS(Not big) with Hash Table:
     So at time of collisions the bigo for hash table is O(n)
 
 # Linked List:
+Singly:
+'a'(Head) --> 'b' --> 'c'(Tail) --> null
+
+Doubly:
+'a'(Head) --> <-- 'b' --> <-- 'c'(Tail) --> null
+
+prepend O(1)
+append O(1)
+lookup O(n)
+insert O(n)
+delete O(n)
+
+# Stacks:
+LIFO
+
+lookup O(n)
+pop O(1)
+push O(1)
+peek O(1) // just to check top item, doesnt delete the top item like pop method
+
+NOTE: Stacks should be build with arrays
+
+# Queues
+FIFO
+
+lookup O(n)
+enqueue O(1)
+dequeue O(1)
+peek O(1)
+
+NOTE: creating queues using Array is not recomnded because with enqueue, you have to shift all the items of array. means O(n)
+Queue should be implemented with Linked List.
 
