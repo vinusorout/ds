@@ -248,3 +248,29 @@ function selectionSort(input){
 }
 selectionSort(arr);
 ```
+
+## Insertion Sort
+
+* It is also least efficient, but work best when you already have nearly sorted list.
+* Starts with first and as we see smallaest next, move that to first place or the place where it best fit and shift the next items.
+
+```js
+var arr = [3,2, 1,5,4];
+function insertionSort(input){
+	for(let i = 0; i < input.length; i++) {
+		if(input[i] < input[0]) {
+			// move no to the first position
+			input.unshift(input.splice(i,1)[0]);
+		} else {
+			// find where no should go
+			for (let j = 1; j < i; j++) {
+				if(input[i] > input[j-1] && input[i] < input[j]) {
+					input.splice(j, 0, input.splice(i,1)[0]);
+				}
+			}
+		}
+	}
+}
+insertionSort(arr);
+```
+
