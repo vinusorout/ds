@@ -186,6 +186,65 @@ traversePostOrder(rootNode, list);
 * Finding the shortest path: BFS
 
 
+# Sorting
+Elementary Sorts: Bubble, Insertion, Selection
 
+## Bubble Sort:
 
+* least efficient O(n ^ 2)
+* Doesnt required any other memory so space complexity is O(1)
+* compare two elements and sorts
+* in first iteration move the largest no to last
+* in second iteration move the second largest no to second last position
+* let say ---> 2, 3, 1, 5, 4 (first compare 2, 3 no change)
+* second compare 3,1 ->> change it to 1, 3
+* third compare 3, 5 --> no change
+* fourth compare 5, 4 --> change it to 4, 5
+* First iteration result --> 2, 1, 3, 4, 5
+* First compare 2, 1 --> change it to 1, 2
+* Second compare 2, 3 --> no change
+* third compare 3,4 --> no change
+* fourth compare 4, 5 --> no change
+* Second iteration result --> 1, 2, 3, 4, 5
 
+```js
+var arr = [3,2, 1,5,4];
+function bubbleSort(input){
+	for(let i = 0; i < input.length; i++) {
+		for(let j =0; j < input.length - 1; j++) { (Nested Loops)
+			if(input[j] > input [j+1]) {
+				var temp = input[j];
+				input[j] = input[j+1];
+				input[j+1] = temp;
+			}
+		}
+	}
+}
+bubbleSort(arr);
+```
+
+## Selection Sort
+
+* Search the smallest element from the entire array and swap it to with the first
+* Then second smallest and swap it with second, and so on
+* least efficient O(n ^ 2)
+* Doesnt required any other memory so space complexity is O(1)
+
+```js
+var arr = [3,2, 1,5,4];
+function selectionSort(input){
+	for(let i = 0; i < input.length; i++) {
+    let min = i;
+    let temp = input[min];
+		for(let j = i+1; j < input.length - 1; j++) { (Nested Loops)
+			if(input[j] < input[min]) {
+				// update j if current is lower than what we had earlier
+        min = j;
+			}
+		}
+    input[i] = input[min];
+    input[min] = temp;
+	}
+}
+selectionSort(arr);
+```
