@@ -317,7 +317,14 @@ function merge(left, right) {
 mergeSort(arr);
 ```
 
+## Quick Sort
 
+* Divide and Conquer
+* faster than elementary sorts
+* O(n * log n)
+* Space complexity is O(n log n) better than Merge
+* Quick sort divide the list as per pivot value(genarrally last value in array is considered as pivot value)
+* element smaller than pivot consider in left list and greater are consider in right array.
 
 
 
